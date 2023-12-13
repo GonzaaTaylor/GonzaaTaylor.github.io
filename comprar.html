@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Compra</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #161616;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      form {
+        padding: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        color: #555;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Formulario de Compra</h1>
+      <form id="purchaseForm" action="procesar.php" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
+
+        <label for="nombre">Metodo de pago:</label>
+        <input type="text" id="tarjeta" name="tarjeta" required />
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="text" id="email" name="email" required />
+
+        <label for="articulo">Artículo a Comprar:</label>
+        <select id="articulo" name="articulo">
+          <option value="articulo1">Teclado MK-Mouse</option>
+          <option value="articulo2">HORUS K619-RGB-Mouse</option>
+          <option value="articulo3">ReDragon-K530RGB-Mouse</option>
+          <option value="articulo1">Teclado Gaming Mecánico Nbx-Mouse</option>
+          <option value="articulo2">
+            TECLADO CORSAIR K60 PRO CHERRY RED VIOLA-Mouse
+          </option>
+          <option value="articulo3">Logitech G-502-Mouse</option>
+          <option value="articulo1">Alienware AW720M-Mouse</option>
+          <option value="articulo2">Razer Cobra-Mouse</option>
+          <option value="articulo3">LogitechG-203-Mouse</option>
+          <option value="articulo1">
+            Mouse Gamer Redragon M909 Emperor-Mouse
+          </option>
+          <option value="articulo2">Redragon Pandora-Auricular</option>
+          <option value="articulo3">Scorpion Marvo-Auricular</option>
+          <option value="articulo1">
+            LAuricular Genius Hs-g600v-Auricular
+          </option>
+          <option value="articulo2">Logitech G733-Auricular</option>
+          <option value="articulo3">
+            AURICULARES GAMING OVLENG OV-P1-Auricular
+          </option>
+        </select>
+
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" required />
+
+        <input type="submit" value="Comprar" />
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("purchaseForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          window.location.href = "confirmacion.html";
+        });
+    </script>
+  </body>
+</html>
